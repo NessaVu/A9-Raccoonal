@@ -1,0 +1,128 @@
+<html>
+
+<head>
+	
+	<!-- Global site tag (gtag.js) - Google Analytics 
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-115193214-1"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-115467101-1');
+	</script> -->
+
+    <!-- Google Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-115467101-1', 'auto'); //Swap out UA-XXXXX-Y with your GA tracking id
+    ga('send', 'pageview'); </script> 
+    <!-- End Google Analytics -->
+
+
+	<title>Raccoonal Book</title>
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="../css/bootstrap.min.css">
+	<link rel="stylesheet" href="../css/style.css">
+
+	<!-- JS -->
+	<!--<script src="../js/bootstrap.js"></script>-->
+	<script src="../js/jquery-3.3.1.min.js"></script>
+	<script src="../js/jquery-ui.min.js"></script>
+
+	<!--
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	-->
+</head>
+
+<body>
+	<div class="content otherPages">
+		<div class="raccoonbookBox">
+			<h1> Raccoon Book </h1>
+			<p id="raccoonp">These mindful raccoons drop by randomly to say hi and see how you're doing!</p>
+			<div class="raccoons">
+
+				{{#each raccoons}}
+				<div class="raccoon">
+					<img src="../images/Racoons/{{src}}">
+					<p class="nameP">{{name}}</p>
+					<p class="hide descriptionP">{{description}}</p>
+					<p class="hide collegeP">{{college}}</p>
+				</div>
+				{{/each}}
+			</div>
+			<div class="raccoondescription">
+				<h2 id="name"></h2>
+				<img id="profilePic" src="">
+				<p id="college"></p>
+				<p id="description"></p>
+				<button type="button" id="closeDpt">back</button>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="bar">
+		<div>
+			<button type="button" class="menu" id="calendarButton" onclick="window.location='calendar'">
+				<img src="../images/Navigation/calendar.png">
+			</button>
+		</div>
+		<div>
+			<button type="button" class="menu" id="bookButton" onclick="window.location='book'">
+				<img src="../images/Navigation/photoalbum.png">
+			</button>
+		</div>
+		<div>
+			<img src="../images/Navigation/home.png" class="menu" id="homeButton" onclick="window.location='homeA'">
+		</div>
+		<div>
+			<button type="button" class="menu" id="marketButton">
+				<img src="../images/Navigation/market.png">
+				<script>
+					$("#marketButton").on("click", function () {
+						$("#marketButton").effect("shake", { distance: 10, time: 20 });
+					});
+				</script>
+			</button>
+		</div>
+		<div>
+			<button type="button" class="menu" id="settingButton" onclick="window.location='setting'">
+				<img src="../images/Navigation/settings.png">
+			</button>
+		</div>
+	</div>
+
+	<!--Popup Profile-->
+	<script> 
+		var profile;
+		function viewProfile(id) {
+			profile = $('#' + id).find('#profile');
+			profile.show().css('display', 'flex');
+		};
+
+		$(".closebtn").on("click", function (e) {
+			$(this).parent().hide()
+			e.stopPropagation()
+		});
+
+		$(".raccoon").on("click", function (e) {
+			$(".raccoondescription").fadeIn(200).css("display", "flex");
+			$("#name").text($(e.target).closest("div").find(".nameP").text());
+			$("#profilePic").attr("src", $(e.target).closest("div").find("img")[0].src);
+			$("#college").text("Visiting from: " + $(e.target).closest("div").find(".collegeP").text());
+			$("#description").text("Mindful Tip:"+ $(e.target).closest("div").find(".descriptionP").text());
+		});
+
+		$("#closeDpt").on("click", function () {
+			$(".raccoondescription").fadeOut(200);
+		})
+	</script>
+</body>
+
+</html>

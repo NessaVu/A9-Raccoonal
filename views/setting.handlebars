@@ -1,0 +1,114 @@
+<html>
+
+<head>
+
+	<!-- Global site tag (gtag.js) - Google Analytics 
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-115193214-1"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-115467101-1');
+	</script> -->
+
+    <!-- Google Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-115467101-1', 'auto'); //Swap out UA-XXXXX-Y with your GA tracking id
+    ga('send', 'pageview'); </script> 
+    <!-- End Google Analytics -->
+    
+	
+	<title>Raccoonal Setting</title>
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="../css/bootstrap.min.css">
+	<link rel="stylesheet" href="../css/style.css">
+
+	<!-- JS -->
+	<!--<script src="../js/bootstrap.js"></script>-->
+	<script src="../js/jquery-3.3.1.min.js"></script>
+	<script src="../js/jquery-ui.min.js"></script>
+</head>
+
+<body>
+	<div class="content settingPage otherPages">
+		<div class="settingBox">
+			<h1 id="titleText">Settings</h1>
+			<div class="sounds">
+				<h2 id="soundText">Sound:</h2>
+				<div class="slideContainer">
+					<input type="range" min="1" max="100" value="50" class="slider">
+				</div>
+
+				<h2 id="sfxText">SFX:</h2>
+				<div class="slideContainer">
+					<input type="range" min="1" max="100" value="50" class="slider">
+				</div>
+			</div>
+			<div class="buttonBox">
+				<button type="button" id="tutorialBtn">Tutorial</button>
+				<button type="button" id="signOutBtn">Sign out</button>
+			</div>
+		</div>
+	</div>
+
+	<div class="bar">
+		<div>
+			<button type="button" class="menu" id="calendarButton" onclick="window.location='calendar'">
+				<img src="../images/Navigation/calendar.png">
+			</button>
+		</div>
+		<div>
+			<button type="button" class="menu" id="bookButton" onclick="window.location='book'">
+				<img src="../images/Navigation/photoalbum.png">
+			</button>
+		</div>
+		<div>
+			<img src="../images/Navigation/home.png" class="menu" id="homeButton" onclick="window.location='homeA'">
+		</div>
+		<div>
+			<button type="button" class="menu" id="marketButton">
+				<img src="../images/Navigation/market.png">
+				<script>
+					$("#marketButton").on("click", function () {
+						$("#marketButton").effect("shake", { distance: 10, time: 20 });
+					});
+				</script>
+			</button>
+		</div>
+		<div>
+			<button type="button" class="menu" id="settingButton" onclick="window.location='setting'">
+				<img src="../images/Navigation/settings.png">
+			</button>
+		</div>
+	</div>
+</body>
+
+<script>
+	$("#tutorialBtn").on("click", function () {
+		window.location = "tutorial";
+	})
+
+	$("#signOutBtn").on("click", function () {
+		window.location = "/";
+	})
+
+	$('input[type="range"]').change(function () {
+		var val = ($(this).val() - $(this).attr('min')) / ($(this).attr('max') - $(this).attr('min'));
+
+		$(this).css('background-image',
+			'-webkit-gradient(linear, left top, right top, '
+			+ 'color-stop(' + val + ', #94A14E), '
+			+ 'color-stop(' + val + ', #C5C5C5)'
+			+ ')'
+		);
+	});
+</script>
+
+</html>

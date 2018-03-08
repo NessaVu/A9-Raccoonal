@@ -1,0 +1,67 @@
+{
+    "raccoons": [
+        {
+            "college": "UCSD",
+            "name": "Grey",
+            "description": "Mindfulness is the basic human ability to be fully present, aware of where we are and what we’re doing, and not overly reactive or overwhelmed by what’s going on around us.",
+            "width": 300,
+            "height": 200,
+            "src": "racoon_default.png",
+            "question": "How was your sleep yesterday?"
+        },
+        {
+            "college": "ERC",
+            "name": "Ellie",
+            "description": "Travel or mix up your routine. When you’re in a new place or routine, you automatically become more present and mindful.",
+            "width": 180,
+            "height": 230,
+            "src": "racoon_erc.png",
+            "question": "How is your stress level today?"
+        },
+        {
+            "college": "Marshall",
+            "name": "Audrey",
+            "description": "Observe your thoughts and emotions. You are not your thoughts, but the observer of your thoughts. Be more present by not getting caught up in your thoughts.",
+            "width": 300,
+            "height": 200,
+            "src": "racoon_marshall.png",
+            "question": "How did you start your day?"
+        },
+        {
+            "college": "Muir",
+            "name": "John",
+            "description": "Don’t feel that you need to fill up all your time with doing. Take some time to simply be.",
+            "width": 250,
+            "height": 240,
+            "src": "racoon_muir.png",
+            "question": "How is the weather today for you?"
+        },
+        {
+            "college": "Revelle",
+            "name": "Roger",
+            "description": "Connect with your senses. Take the time to really experience touch, smell, taste, sound, and sight.",
+            "width": 215,
+            "height": 290,
+            "src": "racoon_revelle.png",
+            "question": "How do you feel about spending time with friends today?"
+        },
+        {
+            "college": "Sixth",
+            "name": "Snoopy",
+            "description": "Get lost in the flow of doing things you love. By pouring all your love and attention into something you’re passionate about, your smaller self - churning thoughts and worries - melt away",
+            "width": 250,
+            "height": 280,
+            "src": "racoon_sixth.png",
+            "question": "How is your body feeling?"
+        },
+        {
+            "college": "Warren",
+            "name": "Earl",
+            "description": "Listen wholeheartedly. Often times we don’t truly listen to people because we’re too busy planning what to say, judging, or getting lost in daydream.",
+            "width": 260,
+            "height": 240,
+            "src": "racoon_warren.png",
+            "question": "How are you doing with work or study today?"
+        }
+    ]
+}
