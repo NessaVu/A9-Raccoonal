@@ -291,6 +291,8 @@
         $("#testAna").on("click", function () {
             console.log("test google analytics");
             gtag("send", "event", "start", "click");
+            gtag("send", "event", "testAna", "click");
+
         })
 
         $("#startScanButton").on("click", clickStart);
